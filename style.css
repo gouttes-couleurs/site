@@ -113,7 +113,7 @@ span.gras {
 #contact li {
     position: fixed;
     left: -450px;
-    background-color: #888;
+    background-color: #CCCCCC;
     display: flex;
     padding: 5px;
     flex-direction: row-reverse;
@@ -122,7 +122,7 @@ span.gras {
     z-index: 99999;
 }
 #contact li * {
-    color: #444;
+    color: #333333;
 }
 #contact li:nth-child(1){
     top: calc(40%);
@@ -155,10 +155,10 @@ span.gras {
     font-size: 1.1em;
 }
 #contact li:nth-child(even){
-    background-color: #444;
+    background-color: #333333;
 }
 #contact li:nth-child(even) * {
-    color: #888;
+    color: #DDDDDD;
 }
 #contact li:hover {
     left: -260px;

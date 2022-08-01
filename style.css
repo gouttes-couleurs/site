@@ -1,0 +1,394 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+:root {
+    --couleurAccueil: #00CCCF;
+    --couleurUtilitaires: #F95738;
+    --couleurGouttes: #FFC000;
+    --couleurInterieur: #3066BE;
+    --couleurBoites: #D74486;
+    --couleurJardin: #4BBB16;
+}
+html {
+    scroll-behavior: smooth;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none;
+}
+body {
+    background-color: #FAFAFA;
+}
+h1 {
+    text-transform: uppercase;
+}
+header {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 3px solid #333;
+    background-color: #FAFAFA;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-around;
+    font-size: 20px;
+    z-index: 999;
+}
+header .item i {
+    font-size: 24px;
+}
+header .item {
+    transition: .3s ease-in-out;
+    cursor: pointer;
+}
+header .item:hover {
+    transform: scale(1.1);
+}
+#utilitairesMenu .icon {
+    position: relative;
+}
+#utilitairesMenu .icon .hide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 27px;
+    height: 13px;
+    background-color: #FAFAFA;
+}
+header span {
+    color: #333;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+#accueilMenu i {
+    color: var(--couleurAccueil);
+}
+#utilitairesMenu i {
+    color: var(--couleurUtilitaires);
+}
+#gouttesMenu i {
+    color: var(--couleurGouttes);
+}
+#interieurMenu i {
+    color: var(--couleurInterieur);
+}
+#boitesMenu i {
+    color: var(--couleurBoites);
+}
+#jardinMenu i {
+    color: var(--couleurJardin);
+}
+
+/* Accueil */
+#accueil {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+#accueil h1 {
+    font-size: 45px;
+    text-align: center;
+    margin-top: 10%;
+    color: #FAFAFA
+}
+#accueil h2 {
+    background-color: transparent;
+    color: #FAfAFA
+}
+#presentation {
+    padding: 15px 15px 0 80px; /*Haut Droite Bas Gauche*/
+    text-align: justify;
+    color: #FAFAFA;
+    font-size: 1.1em;
+}
+span.gras {
+    font-weight: bold;
+    font-size: 1.12em;
+}
+
+#contact li {
+    position: fixed;
+    left: -450px;
+    background-color: #888;
+    display: flex;
+    padding: 5px;
+    flex-direction: row-reverse;
+    height: 50px;
+    transition: .4s ease-in-out;
+    z-index: 99999;
+}
+#contact li * {
+    color: #444;
+}
+#contact li:nth-child(1){
+    top: calc(40%);
+}
+#contact li:nth-child(2){
+    top: calc(40% + 50px);
+}
+#contact li:nth-child(3){
+    top: calc(40% + 100px);
+}
+
+#contact li div {
+    position: relative;
+    width: 500px;
+}
+#contact li i, #contact p, #contact li a {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+#contact li p, #contact li a {
+    right: 60px;
+}
+#contact li i {
+    font-size: 25px;
+    right: 15px;
+    margin-left: 10px;
+}
+#contact li a {
+    font-size: 1.1em;
+}
+#contact li:nth-child(even){
+    background-color: #444;
+}
+#contact li:nth-child(even) * {
+    color: #888;
+}
+#contact li:hover {
+    left: -260px;
+}
+
+.slides {
+    width: 500%;
+    height: 100%;
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+.slide {
+    width: 20%;
+    transition: 0.6s;
+}
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    user-select: none;
+}
+.slideUtilitaires {
+    animation: diaporama 50s infinite;
+}
+.slideJardin img {
+    object-position: 0 0;
+}
+
+#utilitaires, #gouttes, #interieur, #boites, #jardin {
+    padding-top: 50px;
+}
+section h2 {
+    text-align: center;
+    text-transform: uppercase;
+    padding: 10px;
+    width: 270px;
+    /* width: fit-content; */
+    margin: auto;
+    margin-bottom: 15px;
+    position: relative;
+    background-color: #FAFAFA;
+    color: #333;
+}
+section h2::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -25%;
+    width: 150%;
+    transform: translateY(-50%);
+    height: 3px;
+    z-index: -1;
+}
+
+#utilitaires h2 {
+    border: 3px solid var(--couleurUtilitaires);
+}
+#utilitaires h2::before {
+    background-color: var(--couleurUtilitaires);
+}
+#utilitaires .galerie .texte {
+    border: 3px solid var(--couleurUtilitaires);
+    padding: 6px;
+}
+#utilitaires .galerie .texte span.gras {
+    color: var(--couleurUtilitaires);
+}
+#gouttes h2 {
+    border: 3px solid var(--couleurGouttes);
+}
+#gouttes h2::before {
+    background-color: var(--couleurGouttes);
+}
+#gouttes .galerie .texte {
+    border: 3px solid var(--couleurGouttes);
+    padding: 6px;
+}
+#gouttes .galerie .texte span.gras {
+    color: var(--couleurGouttes);
+}
+#interieur h2 {
+    border: 3px solid var(--couleurInterieur);
+}
+#interieur h2::before {
+    background-color: var(--couleurInterieur);
+}
+#interieur .galerie .texte {
+    border: 3px solid var(--couleurInterieur);
+    padding: 6px;
+}
+#interieur .galerie .texte span.gras {
+    color: var(--couleurInterieur);
+}
+#boites h2 {
+    border: 3px solid var(--couleurBoites);
+}
+#boites h2::before {
+    background-color: var(--couleurBoites);
+}
+#boites .galerie .texte {
+    border: 3px solid var(--couleurBoites);
+    padding: 6px;
+}
+#boites .galerie .texte span.gras {
+    color: var(--couleurBoites);
+}
+#jardin h2 {
+    border: 3px solid var(--couleurJardin);
+}
+#jardin h2::before {
+    background-color: var(--couleurJardin);
+}
+#jardin .galerie .texte {
+    border: 3px solid var(--couleurJardin);
+    padding: 6px;
+}
+#jardin .galerie .texte span.gras {
+    color: var(--couleurJardin);
+}
+
+/* Galerie */
+.galerie {
+    padding: 10px;
+    max-width: 1500px;
+    margin: 0 auto;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    grid-auto-rows: 250px;
+    grid-auto-flow: dense;
+}
+.stretch-v {
+    grid-row: span 2;
+}
+.stretch-h {
+    grid-column: span 2;
+}
+.double-stretch {
+    grid-row: span 2;
+    grid-column: span 2;
+}
+.galerie div {
+    position: relative;
+}
+.galerie div img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.galerie div div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: .3s ease-in-out;
+    background-color: rgba(68,68,68,0.7);
+    opacity: 0;
+    cursor: pointer;
+    color: #FAFAFA;
+    padding: 15px;
+    overflow: hidden;
+}
+.galerie div div h3 {
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+.galerie div:hover div {
+    opacity: 1;
+}
+
+footer {
+    background-color: #444;
+    color: #FAFAFA;
+    width: 100%;
+    height: 50px;
+    padding: 10px;
+}
+footer #nomSite {
+    letter-spacing: 5px;
+    font-size: 1.1em;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #FAFAFA;
+    text-align: center;
+    cursor: pointer;
+    line-height: 30px;
+}
+
+/* Responsive */
+@media screen and (max-width:800px){
+    header span {
+        display: none;
+    }
+    header .item:hover {
+        transform: scale(1.2);
+    }
+}
+@media screen and (max-width: 560px){
+    .stretch-v {
+        grid-row: span 1;
+    }
+    .stretch-h {
+        grid-column: span 1;
+    }
+    .double-stretch {
+        grid-row: span 2;
+        grid-column: span 1;
+    }
+}
+
+/* Animations */
+@keyframes diaporama {
+    0% {
+        margin-left: 0;
+    }
+    20% {
+        margin-left: -20%;
+    }
+    40% {
+        margin-left: -40%;
+    }
+    60% {
+        margin-left: -60%;
+    }
+    80% {
+        margin-left: -80%
+    }
+}

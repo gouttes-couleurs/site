@@ -99,11 +99,30 @@ header span {
     background-color: transparent;
     color: #FAfAFA
 }
+#accueilContenu {
+    padding: 0 10px 0 80px; /*Haut droite bas gauche*/
+}
+#presentation, #calendrier {
+    padding: 10px;
+}
+#calendrier {
+    border-left: 2px solid #FAFAFA;
+}
 #presentation {
-    padding: 15px 15px 0 80px; /*Haut Droite Bas Gauche*/
     text-align: justify;
     color: #FAFAFA;
     font-size: 1.1em;
+}
+.evenement {
+    margin-bottom: 10px;
+    color: white;
+    text-align: justify;
+}
+.evenement.passe {
+    color: #DDD;
+}
+span.date::after {
+    content: " - ";
 }
 span.gras {
     font-weight: bold;

@@ -429,10 +429,29 @@ footer #nomSite {
         font-size: 0.9em;
     }
     #presentation {
-        margin-top: -750px;
+        margin-top: -800px;
     }
     .presentation {
         font-size: 1.05em;
+    }
+    label::before {
+        display: block;
+    }
+    #calendrier {
+        height: fit-content;
+    }
+    #calendrier {
+        display: none;
+    }
+    #presentation {
+        display: block;
+        margin-top: 0px;
+    }
+    #responsiveAccueil:checked ~ #accueil #presentation {
+        display: none;
+    }
+    #responsiveAccueil:checked ~ #accueil #calendrier {
+        display: block;
     }
     #contact li:nth-child(1){
         top: calc(35%);
@@ -455,26 +474,6 @@ footer #nomSite {
     .double-stretch {
         grid-row: span 2;
         grid-column: span 1;
-    }
-
-    label::before {
-        display: block;
-    }
-    #calendrier {
-        height: fit-content;
-    }
-    #calendrier {
-        display: none;
-    }
-    #presentation {
-        display: block;
-        margin-top: 0px;
-    }
-    #responsiveAccueil:checked ~ #accueil #presentation {
-        display: none;
-    }
-    #responsiveAccueil:checked ~ #accueil #calendrier {
-        display: block;
     }
 }
 @media screen and (max-width: 482px){

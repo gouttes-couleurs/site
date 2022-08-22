@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
 :root {
     --couleurAccueil: #00CCCF;
-    --couleurUtilitaires: #F95738;
+    --couleurUtilitaires: #F96A4D;
     --couleurGouttes: #FFC000;
-    --couleurInterieur: #3066BE;
-    --couleurBoites: #D74486;
-    --couleurJardin: #4BBB16;
+    --couleurInterieur: #5C8BD6;
+    --couleurBoites: #E278A8;
+    --couleurJardin: #57DB1A;
 }
 html {
     scroll-behavior: smooth;
@@ -14,7 +14,7 @@ html {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
     text-decoration: none;
 }
 body {
@@ -88,38 +88,69 @@ header span {
     height: 100vh;
     position: relative;
     overflow: hidden;
+    padding: 0 10px 0 80px; /*Haut droite bas gauche*/
+    background-color: rgba(51, 51, 51, 0.65);
+    height: 100vh;
 }
 #accueil h1 {
     font-size: 45px;
     text-align: center;
-    margin-top: 10%;
+    margin-top: 50px;
     color: #FAFAFA
 }
 #accueil h2 {
     background-color: transparent;
     color: #FAfAFA
 }
-#accueilContenu {
-    padding: 0 10px 0 80px; /*Haut droite bas gauche*/
+label::before {
+    content: "voir les évènements";
+    text-transform: uppercase;
+    text-align: center;
+    margin: 10px auto;
+    padding: 10px;
+    width: 200px;
+    background-color: transparent;
+    border: 2px solid var(--couleurAccueil);
+    font-weight: bold;
+    color: var(--couleurAccueil);
+    font-size: 1em;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+    display: none;
 }
+label:hover::before {
+    background-color: var(--couleurAccueil);
+    color: #333;
+}
+#responsiveAccueil:checked ~ #accueil label::before {
+    content: "voir le texte"
+}
+
 #presentation, #calendrier {
     padding: 10px;
 }
 #calendrier {
-    border-left: 2px solid #FAFAFA;
+    width: 40%;
+    float: right;
+    margin-left: 15px;
+    height: 100%;
 }
-#presentation {
+.presentation {
     text-align: justify;
     color: #FAFAFA;
-    font-size: 1.1em;
+    font-size: 1.25em;
 }
 .evenement {
     margin-bottom: 10px;
+    font-size: 1.1em;
     color: white;
     text-align: justify;
+    border-left: 3px solid #FAFAFA;
+    padding: 5px;
 }
 .evenement.passe {
-    color: #DDD;
+    color: #C2C2C2;
+    border-left: 3px solid #C2C2C2;
 }
 span.date::after {
     content: " - ";
@@ -184,6 +215,12 @@ span.italique {
 }
 #contact li:hover {
     left: -260px;
+}
+#contact li#mail:hover {
+    left: -175px;
+}
+#contact li#insta:hover {
+    left: -300px;
 }
 
 .slides {
@@ -333,7 +370,7 @@ section h2::before {
     height: 100%;
     object-fit: cover;
 }
-.galerie div div {
+/* .galerie div div {
     position: absolute;
     top: 0;
     left: 0;
@@ -354,7 +391,7 @@ section h2::before {
 }
 .galerie div:hover div {
     opacity: 1;
-}
+} */
 
 footer {
     background-color: #444;
@@ -382,6 +419,31 @@ footer #nomSite {
     header .item:hover {
         transform: scale(1.2);
     }
+    #accueil {
+        padding: 0 10px 0 10px;
+    }
+    #calendrier {
+        float: none;
+        margin-left: 0;
+        width: 100%;
+        font-size: 0.9em;
+    }
+    #presentation {
+        margin-top: -750px;
+    }
+    .presentation {
+        font-size: 1.05em;
+    }
+    #contact li:nth-child(1){
+        top: calc(35%);
+    }
+    #contact li:nth-child(2){
+        top: calc(35% + 50px);
+    }
+    #contact li:nth-child(3){
+        top: calc(35% + 100px);
+    }
+    
 }
 @media screen and (max-width: 560px){
     .stretch-v {
@@ -394,8 +456,39 @@ footer #nomSite {
         grid-row: span 2;
         grid-column: span 1;
     }
-}
 
+    label::before {
+        display: block;
+    }
+    #calendrier {
+        height: fit-content;
+    }
+    #calendrier {
+        display: none;
+    }
+    #presentation {
+        display: block;
+        margin-top: 0px;
+    }
+    #responsiveAccueil:checked ~ #accueil #presentation {
+        display: none;
+    }
+    #responsiveAccueil:checked ~ #accueil #calendrier {
+        display: block;
+    }
+}
+@media screen and (max-width: 482px){
+    #accueil h1 {
+        font-size: 30px;
+    }
+    #accueil h2 {
+        font-size: 20px;
+    }
+    #presentation {
+        margin-top: -30px;
+        font-size: 0.95em;
+    }
+}
 /* Animations */
 @keyframes diaporama {
     0% {
